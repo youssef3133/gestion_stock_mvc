@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+    	http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+ 
+	<bean id="salarieDao" class="com.stock.mvc.implement.SalarieDAO"/>
+	<bean id="salarieService" class="com.stock.mvc.services.impl.SalarieService">
+		<property name="dao" ref="salarieDao"/>
+	</bean>
+	
+	<bean id="employeurDao" class="com.stock.mvc.implement.EmployeurDAO"/>
+	<bean id="employeurService" class="com.stock.mvc.services.impl.EmployeurService">
+		<property name="dao" ref="employeurDao"/>
+	</bean>
+	
+	<bean id="impotsDao" class="com.stock.mvc.implement.ImpotsDAO"/>
+	<bean id="impotsService" class="com.stock.mvc.services.impl.ImpotsService">
+		<property name="dao" ref="impotsDao"/>
+	</bean>
+	
+	<bean id="remunerationBrutDao" class="com.stock.mvc.implement.RemunerationBrutDAO"/>
+	<bean id="remunerationBrutService" class="com.stock.mvc.services.impl.RemunerationBrutService">
+		<property name="dao" ref="remunerationBrutDao"/>
+	</bean>
+	
+	<bean id="retraiteDao" class="com.stock.mvc.implement.RetraiteDAO"/>
+	<bean id="retraiteService" class="com.stock.mvc.services.impl.RetraiteService">
+		<property name="dao" ref="retraiteDao"/>
+	</bean>
+	
+	<bean id="salaireDao" class="com.stock.mvc.implement.SalaireDAO"/>
+	<bean id="salaireService" class="com.stock.mvc.services.impl.SalaireService">
+		<property name="dao" ref="salaireDao"/>
+	</bean>
+	
+	<bean id="santeDao" class="com.stock.mvc.implement.SanteDAO"/>
+	<bean id="santeService" class="com.stock.mvc.services.impl.SanteService">
+		<property name="dao" ref="santeDao"/>
+	</bean>
+	
+<!--         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" /> -->
+<!--         <property name="url" value="jdbc:mysql://localhost:3306/stockmvc?useSSL=false&amp;createDatabaseIfNotExist=true&amp;serverTimezone=UTC"/> -->
+<!--         <property name="username" value="root" /> -->
+<!--         <property name="password" value="youssef31" /> -->
+   
+    
+</beans>
